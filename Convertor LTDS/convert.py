@@ -1,4 +1,4 @@
-"""Convertor , Version : 0.0.1"""
+"""Convertor , Version : 0.1.0"""
 
 
 # To Lists
@@ -83,4 +83,4 @@ def tuple_to_dictionary(tup=()):  # Converts List to Dictionary
 
 
 if __name__ != '__main__':
-    print("Hii from Benefit Zebra\nConvertor Version 0.0.1\n")
+    print("Hii from Benefit Zebra\nConvertor Version 0.1.0\n")
