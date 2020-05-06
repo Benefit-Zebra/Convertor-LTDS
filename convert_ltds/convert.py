@@ -1,15 +1,17 @@
-"""Convertor , Version : 0.1.1"""
+"""Convertor , Version : 0.1.2"""
+
+condition = True
 
 
 # To List
 def to_list(data):
-    if type(data) == list:  # List to List
+    if type(data) is list:  # List to List
         return data
 
-    elif type(data) == tuple:  # Tuple to List
+    elif type(data) is tuple:  # Tuple to List
         return list(data)  # Converted to Tuple
 
-    elif type(data) == dict:  # Dict to List
+    elif type(data) is dict:  # Dict to List
         dict_list = []  # List of dict
 
         for key, values in data.items():
@@ -21,27 +23,29 @@ def to_list(data):
 
     else:  # Error
         print("Provide List/Tuple/Dict/Set")
+        exit(-1)
 
 
 # To Tuple
 def to_tuple(data):
-    if type(data) == list:  # List to Tuple
+    if type(data) is list:  # List to Tuple
         return tuple(data)
 
-    elif type(data) == tuple:  # Tuple to Tuple
+    elif type(data) is tuple:  # Tuple to Tuple
         return data
 
-    elif type(data) == dict:  # Dict to Tuple
+    elif type(data) is dict:  # Dict to Tuple
         dict_tuple = tuple(to_list(data))
         return dict_tuple
 
     else:  # Error
         print("Provide List/Tuple/Dict/Set")
+        exit(-1)
 
 
 # To Dictionary
 def to_dict(data):
-    if type(data) == list:  # List to Dict
+    if type(data) is list:  # List to Dict
 
         list_dict = {}
         first_word = data[0]
@@ -61,18 +65,23 @@ def to_dict(data):
 
             return list_dict
         else:
-            print("List cannot be Converted")  # Hey! Why didn't you follow ":" rule.
+            print("Data cannot be Converted")  # Hey! Why didn't you follow ":" rule.
             # (Which was made by Me)
 
-    elif type(data) == tuple:  # Tuple to Dict
+    elif type(data) is tuple:  # Tuple to Dict
         return to_dict(list(data))
 
-    elif type(data) == dict:  # Dict to Dict
+    elif type(data) is dict:  # Dict to Dict
         return data
 
     else:  # Error
         print("Provide List/Tuple/Dict/Set")
+        exit(-1)
 
 
-if __name__ != '__main__':
-    print("Hii from Benefit Zebra\nConvertor Version 0.1.1\n")
+def no_hii():
+    condition = False
+
+
+if __name__ != '__main__' and condition is True:
+    print("Hii from Benefit Zebra\nConvertor Version 0.1.2\n")

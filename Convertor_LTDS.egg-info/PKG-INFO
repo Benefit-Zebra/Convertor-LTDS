@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: Convertor-LTDS
-Version: 0.1.1
-Summary: A Python package to convert between lists,tuples,dictionaries and sets.
+Version: 0.1.2
+Summary: A Python package to convert between Lists,Tuples,Dictionaries and Sets.
 Home-page: https://github.com/Benefit-Zebra/Convertor-LTDS
 Author: Benefit Zebra
 Author-email: benefitzebra4707@gmail.com
