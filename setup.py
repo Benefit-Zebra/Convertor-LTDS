@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name="Convertor-LTDS",
-    version="0.1.2",
+    version="0.1.3",
     description="A Python package to convert between Lists,Tuples,Dictionaries and Sets.",
     long_description=readme(),
     long_description_content_type="text/markdown",

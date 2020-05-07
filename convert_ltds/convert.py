@@ -1,16 +1,13 @@
-"""Convertor , Version : 0.1.2"""
-
-condition = True
+"""Convertor , Version : 0.1.3"""
 
 
 # To List
 def to_list(data):
-    if type(data) is list:  # List to List
-        return data
+    # List/Tuple/Set to List
+    if type(data) is list or type(data) is tuple or type(data) is set:
+        return list(data)
 
-    elif type(data) is tuple:  # Tuple to List
-        return list(data)  # Converted to Tuple
-
+    # Dict to List
     elif type(data) is dict:  # Dict to List
         dict_list = []  # List of dict
 
@@ -28,15 +25,13 @@ def to_list(data):
 
 # To Tuple
 def to_tuple(data):
-    if type(data) is list:  # List to Tuple
+    # List/Tuple/Set to Tuple
+    if type(data) is list or type(data) is tuple or type(data) is set:
         return tuple(data)
 
-    elif type(data) is tuple:  # Tuple to Tuple
-        return data
-
+    # Dict to Tuple
     elif type(data) is dict:  # Dict to Tuple
-        dict_tuple = tuple(to_list(data))
-        return dict_tuple
+        return tuple(to_list(data))
 
     else:  # Error
         print("Provide List/Tuple/Dict/Set")
@@ -74,14 +69,21 @@ def to_dict(data):
     elif type(data) is dict:  # Dict to Dict
         return data
 
+    elif type(data) is set:
+        print("Set cannot be converted to Dict")
+        exit(-1)
+
     else:  # Error
-        print("Provide List/Tuple/Dict/Set")
+        print("Provide List/Tuple/Dict")
         exit(-1)
 
 
-def no_hii():
-    condition = False
+if __name__ != '__main__':
+    print("Hii from Benefit Zebra\nConvertor Version 0.1.3\n")
 
-
-if __name__ != '__main__' and condition is True:
-    print("Hii from Benefit Zebra\nConvertor Version 0.1.2\n")
+# Tests
+# list1 = ["abcd:", "$%^';", 4535, 4545.979]
+# tuple1 = ("efgh:", "/*-+", 5656, 2343.432)
+# set1 = {"ijkl:", "*&^%", 1234, 1234.56}
+# dict1 = {"asdf": "!@$$", "cvbn": 7890.01}
+# print()

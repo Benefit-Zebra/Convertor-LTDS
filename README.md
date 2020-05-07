@@ -15,7 +15,7 @@ Type "from convert_ltds import convert"
 >>>print(tuple_alphabets)
 ```
 
-Output: ("A", "B", "C", "D")
+**Output: ("A", "B", "C", "D")**
 
 <h2> Suggestions </h2>
 
