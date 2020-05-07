@@ -8,19 +8,18 @@ Type "from convert_ltds import convert"
 
 <h3> Example </h3>
 
-'''python
+```python
 >>>from convert_ltds import convert
 >>>alphabets = ["A", "B", "C", "D"]
 >>>tuple_alphabets = convert.to_tuple(alphabets)
 >>>print(tuple_alphabets)
-'''
+```
 
 Output: ("A", "B", "C", "D")
 
 <h2> Suggestions </h2>
 
-You can give me suggestions on https://github.com/Benefit-Zebra/Convertor-LTDS"
-
+You can give me suggestions on https://github.com/Benefit-Zebra/Convertor-LTDS
 #FeelingLonely
 
 Note: I have problem on converting to set datatype. You can give suggestions.
