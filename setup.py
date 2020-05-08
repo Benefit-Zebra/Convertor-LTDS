@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name="Convertor-LTDS",
-    version="0.1.3",
+    version="0.1.4",
     description="A Python package to convert between Lists,Tuples,Dictionaries and Sets.",
     long_description=readme(),
     long_description_content_type="text/markdown",
@@ -22,4 +22,8 @@ setup(
     ],
     packages=["convert_ltds"],
     include_package_data=True,
+    project_urls={
+            "Source": "https://github.com/Benefit-Zebra/Convertor-LTDS",
+            "Bug Reports": "https://github.com/Benefit-Zebra/Convertor-LTDS/issues",
+        }
 )

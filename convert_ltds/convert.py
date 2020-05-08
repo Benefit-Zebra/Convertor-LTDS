@@ -1,4 +1,4 @@
-"""Convertor , Version : 0.1.3"""
+"""Convertor , Version : 0.1.4"""
 
 
 # To List
@@ -8,7 +8,7 @@ def to_list(data):
         return list(data)
 
     # Dict to List
-    elif type(data) is dict:  # Dict to List
+    elif type(data) is dict:
         dict_list = []  # List of dict
 
         for key, values in data.items():
@@ -30,7 +30,7 @@ def to_tuple(data):
         return tuple(data)
 
     # Dict to Tuple
-    elif type(data) is dict:  # Dict to Tuple
+    elif type(data) is dict:
         return tuple(to_list(data))
 
     else:  # Error
@@ -63,14 +63,17 @@ def to_dict(data):
             print("Data cannot be Converted")  # Hey! Why didn't you follow ":" rule.
             # (Which was made by Me)
 
-    elif type(data) is tuple:  # Tuple to Dict
+    # Tuple to Dict
+    elif type(data) is tuple:
         return to_dict(list(data))
 
-    elif type(data) is dict:  # Dict to Dict
+    # Dict to Dict
+    elif type(data) is dict:
         return data
 
     elif type(data) is set:
-        print("Set cannot be converted to Dict")
+        print("Set cannot be converted to Dict.\n"
+              "Due to Fact that set elements get rearranged each time when program is run")
         exit(-1)
 
     else:  # Error
@@ -78,12 +81,28 @@ def to_dict(data):
         exit(-1)
 
 
+# To Set
+def to_set(data):
+    # List/Tuple/Set to Set
+    if type(data) is list or type(data) is tuple or type(data) is set:
+        return set(data)
+
+    # Dict to Set
+    elif type(data) is dict:
+        return set(to_list(data))
+
+    else:  # Error
+        print("Provide List/Tuple/Dict/Set")
+        exit(-1)
+
+
 if __name__ != '__main__':
-    print("Hii from Benefit Zebra\nConvertor Version 0.1.3\n")
+    print("Hii from Benefit Zebra\nConvertor Version 0.1.4\n"
+          "Give me Suggestions on https://github.com/Benefit-Zebra/Convertor-LTDS\n")
 
 # Tests
 # list1 = ["abcd:", "$%^';", 4535, 4545.979]
 # tuple1 = ("efgh:", "/*-+", 5656, 2343.432)
 # set1 = {"ijkl:", "*&^%", 1234, 1234.56}
-# dict1 = {"asdf": "!@$$", "cvbn": 7890.01}
+# dict1 = {"mnop": "!@$$", "asdf": 7890.01}
 # print()
