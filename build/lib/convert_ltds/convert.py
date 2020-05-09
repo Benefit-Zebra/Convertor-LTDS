@@ -1,10 +1,16 @@
-"""Convertor , Version : 0.1.4"""
+"""Convertor , Version : 0.1.5"""
+
+
+def input_err():
+    print("Provide List/Tuple/Dict/Set/Frozenset")
+    exit(-1)
 
 
 # To List
 def to_list(data):
-    # List/Tuple/Set to List
-    if type(data) is list or type(data) is tuple or type(data) is set:
+    # List/Tuple/Set/Frozenset to List
+    if type(data) is list or type(data) is tuple or \
+            type(data) is set or type(data) is frozenset:
         return list(data)
 
     # Dict to List
@@ -19,14 +25,14 @@ def to_list(data):
         return dict_list  # List
 
     else:  # Error
-        print("Provide List/Tuple/Dict/Set")
-        exit(-1)
+        input_err()
 
 
 # To Tuple
 def to_tuple(data):
-    # List/Tuple/Set to Tuple
-    if type(data) is list or type(data) is tuple or type(data) is set:
+    # List/Tuple/Set/Frozenset to Tuple
+    if type(data) is list or type(data) is tuple or \
+            type(data) is set or type(data) is frozenset:
         return tuple(data)
 
     # Dict to Tuple
@@ -34,8 +40,7 @@ def to_tuple(data):
         return tuple(to_list(data))
 
     else:  # Error
-        print("Provide List/Tuple/Dict/Set")
-        exit(-1)
+        input_err()
 
 
 # To Dictionary
@@ -71,9 +76,9 @@ def to_dict(data):
     elif type(data) is dict:
         return data
 
-    elif type(data) is set:
-        print("Set cannot be converted to Dict.\n"
-              "Due to Fact that set elements get rearranged each time when program is run")
+    elif type(data) is set or type(data) is frozenset:
+        print("Set/Frozenset cannot be converted to Dict.\n"
+              "Due to Fact that set/frozenset elements get rearranged each time when program is run")
         exit(-1)
 
     else:  # Error
@@ -83,8 +88,9 @@ def to_dict(data):
 
 # To Set
 def to_set(data):
-    # List/Tuple/Set to Set
-    if type(data) is list or type(data) is tuple or type(data) is set:
+    # List/Tuple/Set/Frozenset to Set
+    if type(data) is list or type(data) is tuple or \
+            type(data) is set or type(data) is frozenset:
         return set(data)
 
     # Dict to Set
@@ -92,12 +98,26 @@ def to_set(data):
         return set(to_list(data))
 
     else:  # Error
-        print("Provide List/Tuple/Dict/Set")
-        exit(-1)
+        input_err()
+
+
+# To Frozenset
+def to_frozenset(data):
+    # List/Tuple/Set/Frozenset to Frozenet
+    if type(data) is list or type(data) is tuple or \
+            type(data) is set or type(data) is frozenset:
+        return frozenset(data)
+
+    # Dict to Frozenset
+    elif type(data) is dict:
+        return frozenset(to_list(data))
+
+    else:  # Error
+        input_err()
 
 
 if __name__ != '__main__':
-    print("Hii from Benefit Zebra\nConvertor Version 0.1.4\n"
+    print("Hii from Benefit Zebra\nConvertor Version 0.1.5\n"
           "Give me Suggestions on https://github.com/Benefit-Zebra/Convertor-LTDS\n")
 
 # Tests
@@ -105,4 +125,5 @@ if __name__ != '__main__':
 # tuple1 = ("efgh:", "/*-+", 5656, 2343.432)
 # set1 = {"ijkl:", "*&^%", 1234, 1234.56}
 # dict1 = {"mnop": "!@$$", "asdf": 7890.01}
+# frozenset1 = frozenset({"Asad:", 32432, "qwer", 2324.5})
 # print()
